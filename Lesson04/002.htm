@@ -1,0 +1,114 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN">
+<html>
+<head>
+<title>Экспертные системы. Урок №4</title>
+<meta http-equiv="Content-Type" content="text/html; charset=windows-1251">
+<script language="JavaScript" type="text/JavaScript">
+<!--
+function MM_preloadImages() { //v3.0
+  var d=document; if(d.images){ if(!d.MM_p) d.MM_p=new Array();
+    var i,j=d.MM_p.length,a=MM_preloadImages.arguments; for(i=0; i<a.length; i++)
+    if (a[i].indexOf("#")!=0){ d.MM_p[j]=new Image; d.MM_p[j++].src=a[i];}}
+}
+
+function MM_findObj(n, d) { //v4.01
+  var p,i,x;  if(!d) d=document; if((p=n.indexOf("?"))>0&&parent.frames.length) {
+    d=parent.frames[n.substring(p+1)].document; n=n.substring(0,p);}
+  if(!(x=d[n])&&d.all) x=d.all[n]; for (i=0;!x&&i<d.forms.length;i++) x=d.forms[i][n];
+  for(i=0;!x&&d.layers&&i<d.layers.length;i++) x=MM_findObj(n,d.layers[i].document);
+  if(!x && d.getElementById) x=d.getElementById(n); return x;
+}
+
+function MM_nbGroup(event, grpName) { //v6.0
+  var i,img,nbArr,args=MM_nbGroup.arguments;
+  if (event == "init" && args.length > 2) {
+    if ((img = MM_findObj(args[2])) != null && !img.MM_init) {
+      img.MM_init = true; img.MM_up = args[3]; img.MM_dn = img.src;
+      if ((nbArr = document[grpName]) == null) nbArr = document[grpName] = new Array();
+      nbArr[nbArr.length] = img;
+      for (i=4; i < args.length-1; i+=2) if ((img = MM_findObj(args[i])) != null) {
+        if (!img.MM_up) img.MM_up = img.src;
+        img.src = img.MM_dn = args[i+1];
+        nbArr[nbArr.length] = img;
+    } }
+  } else if (event == "over") {
+    document.MM_nbOver = nbArr = new Array();
+    for (i=1; i < args.length-1; i+=3) if ((img = MM_findObj(args[i])) != null) {
+      if (!img.MM_up) img.MM_up = img.src;
+      img.src = (img.MM_dn && args[i+2]) ? args[i+2] : ((args[i+1])? args[i+1] : img.MM_up);
+      nbArr[nbArr.length] = img;
+    }
+  } else if (event == "out" ) {
+    for (i=0; i < document.MM_nbOver.length; i++) {
+      img = document.MM_nbOver[i]; img.src = (img.MM_dn) ? img.MM_dn : img.MM_up; }
+  } else if (event == "down") {
+    nbArr = document[grpName];
+    if (nbArr)
+      for (i=0; i < nbArr.length; i++) { img=nbArr[i]; img.src = img.MM_up; img.MM_dn = 0; }
+    document[grpName] = nbArr = new Array();
+    for (i=2; i < args.length-1; i+=2) if ((img = MM_findObj(args[i])) != null) {
+      if (!img.MM_up) img.MM_up = img.src;
+      img.src = img.MM_dn = (args[i+1])? args[i+1] : img.MM_up;
+      nbArr[nbArr.length] = img;
+  } }
+}
+//-->
+</script>
+</head>
+
+<body bgcolor="#FFCC99">
+<blockquote>
+  <div align="left"> 
+    <table border="0" cellpadding="0" cellspacing="0">
+      <tr> 
+        <td><a href="001.htm" target="_self" onClick="MM_nbGroup('down','group1','Back','',1)" onMouseOver="MM_nbGroup('over','Back','','',1)" onMouseOut="MM_nbGroup('out')"><img src="img/Back.gif" alt="" name="Back" width="73" height="22" border="0" onload=""></a></td>
+        <td><a href="main04.htm" target="_self" onClick="MM_nbGroup('down','group1','Menu','',1)" onMouseOver="MM_nbGroup('over','Menu','','',1)" onMouseOut="MM_nbGroup('out')"><img src="img/Menu.gif" alt="" name="Menu" width="73" height="22" border="0" onload=""></a></td>
+        <td><a href="003.htm" target="_self" onClick="MM_nbGroup('down','group1','For','',1)" onMouseOver="MM_nbGroup('over','For','','',1)" onMouseOut="MM_nbGroup('out')"><img src="img/For.gif" alt="" name="For" width="73" height="22" border="0" onload=""></a></td>
+      </tr>
+    </table>
+    
+  </div>
+</blockquote>
+<div align="justify">
+  <p align="center"><strong><font size="5">Продукционная модель</font></strong></p>
+  <p><br>
+    ЯПЗ, основанные на правилах (rule-based), являются наиболее распространенными 
+    и более 80% ЭС используют именно их.<br>
+    <em>Определение 1.5</em><br>
+    Продукционная модель или модель, основанная на правилах, позволяет представить 
+    знания в виде предложений типа &quot;Если (условие), то (действие)&quot;.<br>
+    Под &quot;условием&quot; (антецедентом) понимается некоторое предложение-образец, 
+    по которому осуществляется поиск в базе знаний, а под &quot;действием&quot; 
+    (консеквентом) — действия, выполняемые при успешном исходе поиска (они могут 
+    быть промежуточными, выступающими далее как условия, и терминальными или целевыми, 
+    завершающими работу системы).<br>
+    Чаще всего вывод на такой базе знаний бывает прямой (от данных к поиску цели) 
+    или обратный (от цели для ее подтверждения — к данным). Данные — это исходные 
+    факты, хранящиеся в базе фактов, на основании которых запускается машина вывода 
+    или интерпретатор правил, перебирающий правила из продукционной базы знаний 
+    (см. разд. 1.3).<br>
+    Продукционная, модель так часто применяется в промышленных экспертных системах, 
+    поскольку привлекает разработчиков своей наглядностью, высокой модульностью, 
+    легкостью внесения дополнений и изменений и простотой механизма логического 
+    вывода.<br>
+    Имеется большое число программных средств, реализующих продукционный подход 
+    (например, языки высокого уровня CLIPS и OPS 5; &quot;оболочки&quot; или &quot;пустые&quot; 
+    ЭС — EXSYS Professional и Карра, инструментштьные системы КЕЕ, ARTS, PIES 
+    [Хорошевский, 1993]), а также промышленных ЭС на его основе (например, ЭС, 
+    созданных средствами G2 [Попов, 1996]). Подробнее см. [Попов, Фоминых и др., 
+    1996; Хорошевский, 1993; Гаврилова, Хорошевский, 2001; Durkin, 1998].<br>
+  </p>
+</div>
+<blockquote> 
+  <div align="justify"> 
+    <table border="0" cellpadding="0" cellspacing="0">
+      <tr> 
+        <td><a href="001.htm" target="_self" onClick="MM_nbGroup('down','group1','Back','',1)" onMouseOver="MM_nbGroup('over','Back','','',1)" onMouseOut="MM_nbGroup('out')"><img src="img/Back.gif" alt="" name="Back" width="73" height="22" border="0" onload=""></a></td>
+        <td><a href="main04.htm" target="_self" onClick="MM_nbGroup('down','group1','Menu','',1)" onMouseOver="MM_nbGroup('over','Menu','','',1)" onMouseOut="MM_nbGroup('out')"><img src="img/Menu.gif" alt="" name="Menu" width="73" height="22" border="0" onload=""></a></td>
+        <td><a href="003.htm" target="_self" onClick="MM_nbGroup('down','group1','For','',1)" onMouseOver="MM_nbGroup('over','For','','',1)" onMouseOut="MM_nbGroup('out')"><img src="img/For.gif" alt="" name="For" width="73" height="22" border="0" onload=""></a></td>
+      </tr>
+    </table>
+  </div>
+</blockquote>
+</body>
+</html>

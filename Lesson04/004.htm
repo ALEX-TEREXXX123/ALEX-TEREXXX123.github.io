@@ -1,0 +1,185 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN">
+<html>
+<head>
+<title>Экспертные системы. Урок №4</title>
+<meta http-equiv="Content-Type" content="text/html; charset=windows-1251">
+<script language="JavaScript" type="text/JavaScript">
+<!--
+function MM_preloadImages() { //v3.0
+  var d=document; if(d.images){ if(!d.MM_p) d.MM_p=new Array();
+    var i,j=d.MM_p.length,a=MM_preloadImages.arguments; for(i=0; i<a.length; i++)
+    if (a[i].indexOf("#")!=0){ d.MM_p[j]=new Image; d.MM_p[j++].src=a[i];}}
+}
+
+function MM_findObj(n, d) { //v4.01
+  var p,i,x;  if(!d) d=document; if((p=n.indexOf("?"))>0&&parent.frames.length) {
+    d=parent.frames[n.substring(p+1)].document; n=n.substring(0,p);}
+  if(!(x=d[n])&&d.all) x=d.all[n]; for (i=0;!x&&i<d.forms.length;i++) x=d.forms[i][n];
+  for(i=0;!x&&d.layers&&i<d.layers.length;i++) x=MM_findObj(n,d.layers[i].document);
+  if(!x && d.getElementById) x=d.getElementById(n); return x;
+}
+
+function MM_nbGroup(event, grpName) { //v6.0
+  var i,img,nbArr,args=MM_nbGroup.arguments;
+  if (event == "init" && args.length > 2) {
+    if ((img = MM_findObj(args[2])) != null && !img.MM_init) {
+      img.MM_init = true; img.MM_up = args[3]; img.MM_dn = img.src;
+      if ((nbArr = document[grpName]) == null) nbArr = document[grpName] = new Array();
+      nbArr[nbArr.length] = img;
+      for (i=4; i < args.length-1; i+=2) if ((img = MM_findObj(args[i])) != null) {
+        if (!img.MM_up) img.MM_up = img.src;
+        img.src = img.MM_dn = args[i+1];
+        nbArr[nbArr.length] = img;
+    } }
+  } else if (event == "over") {
+    document.MM_nbOver = nbArr = new Array();
+    for (i=1; i < args.length-1; i+=3) if ((img = MM_findObj(args[i])) != null) {
+      if (!img.MM_up) img.MM_up = img.src;
+      img.src = (img.MM_dn && args[i+2]) ? args[i+2] : ((args[i+1])? args[i+1] : img.MM_up);
+      nbArr[nbArr.length] = img;
+    }
+  } else if (event == "out" ) {
+    for (i=0; i < document.MM_nbOver.length; i++) {
+      img = document.MM_nbOver[i]; img.src = (img.MM_dn) ? img.MM_dn : img.MM_up; }
+  } else if (event == "down") {
+    nbArr = document[grpName];
+    if (nbArr)
+      for (i=0; i < nbArr.length; i++) { img=nbArr[i]; img.src = img.MM_up; img.MM_dn = 0; }
+    document[grpName] = nbArr = new Array();
+    for (i=2; i < args.length-1; i+=2) if ((img = MM_findObj(args[i])) != null) {
+      if (!img.MM_up) img.MM_up = img.src;
+      img.src = img.MM_dn = (args[i+1])? args[i+1] : img.MM_up;
+      nbArr[nbArr.length] = img;
+  } }
+}
+//-->
+</script>
+</head>
+
+<body bgcolor="#FFCC99">
+<blockquote> 
+  <table border="0" cellpadding="0" cellspacing="0">
+    <tr> 
+      <td><a href="003.htm" target="_self" onClick="MM_nbGroup('down','group1','Back','',1)" onMouseOver="MM_nbGroup('over','Back','','',1)" onMouseOut="MM_nbGroup('out')"><img src="img/Back.gif" alt="" name="Back" width="73" height="22" border="0" onload=""></a></td>
+      <td><a href="main04.htm" target="_self" onClick="MM_nbGroup('down','group1','Menu','',1)" onMouseOver="MM_nbGroup('over','Menu','','',1)" onMouseOut="MM_nbGroup('out')"><img src="img/Menu.gif" alt="" name="Menu" width="73" height="22" border="0" onload=""></a></td>
+      <td><a href="005.htm" target="_self" onClick="MM_nbGroup('down','group1','For','',1)" onMouseOver="MM_nbGroup('over','For','','',1)" onMouseOut="MM_nbGroup('out')"><img src="img/For.gif" alt="" name="For" width="73" height="22" border="0" onload=""></a></td>
+    </tr>
+  </table>
+  
+</blockquote>
+<p align="center"><strong><font size="5">Фреймы</font></strong></p>
+<p align="justify"><br>
+  Термин фрейм (от англ. frame — &quot;каркас&quot; или &quot;рамка&quot;) был 
+  предложен Марвином Минским [Минский, 1979], одним из пионеров ИИ, в 70-е годы 
+  для обозначения структуры знаний для восприятия пространственных сцен. Эта модель, 
+  как и семантическая сеть, имеет глубокое психологическое обоснование.<br>
+  <em>Определение 1.7</em><br>
+  Фрейм — это абстрактный образ для представления стереотипа объекта, понятия 
+  или ситуации.<br>
+  Интуитивно понятно, что под абстрактным образом понимается некоторая обобщенная 
+  и упрощенная модель или структура. Например, произнесение вслух слова &quot;комната&quot; 
+  порождает у слушающих образ комнаты: &quot;жилое помещение с четырьмя стенами, 
+  полом, потолком, окнами и дверью, площадью 6—20 м2&quot;. Из этого описания 
+  ничего нельзя убрать (например, убрав окна, мы получим уже чулан, а не комнату), 
+  но в нем есть &quot;дырки&quot; или &quot;слоты&quot;— это незаполненные значения 
+  некоторых атрибутов — например, количество окон, цвет стен, высота потолка, 
+  покрытие пола и др. </p>
+<p align="justify">В теории фреймов такой образ комнаты называется фреймом комнаты. 
+  Фреймом также называется и формализованная модель для отображения образа.<br>
+  Различают фреймы-образцы или прототипы, хранящиеся в базе знаний, и фреймы-экземпляры, 
+  которые создаются для отображения реальных фактических ситуаций на основе поступающих 
+  данных. Модель фрейма является достаточно универсальной, поскольку позволяет 
+  отобразить все многообразие знаний о мире через:<br>
+  – фреймы-структуры, использующиеся для обозначения объектов и понятий (заем, 
+  залог, вексель);<br>
+  – фреймы-роли (менеджер, кассир, клиент);<br>
+  – фреймы-сценарии (банкротство, собрание акционеров, празднование именин);<br>
+  – фреймы-ситуации (тревога, авария, рабочий режим устройства) и др.<br>
+  Традиционно структура фрейма может быть представлена как список свойств:</p>
+<p align="justify">(ИМЯ ФРЕЙМА:<br>
+  (имя 1-го слота: значение 1-го слота), <br>
+  (имя 2-го слота: значение 2-го слота),<br>
+  …………….<br>
+  (имя N-гo слота: значение N-го слота)).</p>
+<p align="justify">Ту же запись можно представить в виде таблицы (см. табл. 1.1), 
+  дополнив ее двумя столбцами.</p>
+<p align="justify"></p>
+<p align="justify">Таблица 1.1. Структура фрейма</p>
+<table width="75%" border="1">
+  <tr> 
+    <td colspan="4"><div align="center">Имя фрейма</div></td>
+  </tr>
+  <tr> 
+    <td>Имя слота</td>
+    <td>Значение слота</td>
+    <td>Способ получения значения</td>
+    <td>Присоединенная процедура</td>
+  </tr>
+  <tr> 
+    <td>&nbsp;</td>
+    <td>&nbsp;</td>
+    <td>&nbsp;</td>
+    <td>&nbsp;</td>
+  </tr>
+  <tr> 
+    <td>&nbsp;</td>
+    <td>&nbsp;</td>
+    <td>&nbsp;</td>
+    <td>&nbsp;</td>
+  </tr>
+  <tr> 
+    <td>&nbsp;</td>
+    <td>&nbsp;</td>
+    <td>&nbsp;</td>
+    <td>&nbsp;</td>
+  </tr>
+</table>
+<p align="justify"><br>
+  В таблице дополнительные столбцы (3-й и 4-й) предназначены для описания способа 
+  получения слотом его значения и возможного присоединения к тому или иному слоту 
+  специальных процедур, что допускается в теории фреймов. В качестве значения 
+  слота может выступать имя другого фрейма, так образуются сети фреймов.</p>
+<p align="justify">Существует несколько способов получения слотом значений во 
+  фрейме-экземпляре:<br>
+  – по умолчанию от фрейма-образца (Default-значение);<br>
+  – через наследование свойств от фрейма, указанного в слоте АКО;<br>
+  – по формуле, указанной в слоте;<br>
+  – через присоединенную процедуру;<br>
+  – явно из диалога с пользователем;<br>
+  – из базы данных.<br>
+  Важнейшим свойством теории фреймов является заимствование из теории семантических 
+  сетей — так называемое наследование свойств. И во фреймах, и в семантических 
+  сетях наследование происходит по АКО-связям (A-Kind-Of = это). Слот АКО указывает 
+  на фрейм более высокого уровня иерархии, откуда неявно наследуются, т. е. переносятся, 
+  значения аналогичных слотов.<br>
+  Например, в сети фреймов на рис. 1.4 понятие &quot;ученик&quot; наследует свойства 
+  фреймов &quot;ребенок&quot; и &quot;человек&quot;, которые находятся на более 
+  высоком уровне иерархии. На вопрос &quot;любят ли ученики сладкое?&quot; следует 
+  ответ &quot;да&quot;, т. к. этим свойством обладают все дети, что указано во 
+  фрейме &quot;ребенок&quot;. Наследование свойств может быть частичным: возраст 
+  для учеников не наследуется из фрейма &quot;ребенок&quot;, поскольку указан 
+  явно в своем собственном фрейме. <br>
+  <img src="img/file_04_01.png" width="556" height="218"><br>
+  Рис. 1.4. Сеть фреймов<br>
+  Основным преимуществом фреймов как модели представления знаний является то, 
+  что она отражает концептуальную основу организации памяти человека [Шенк, Хантер, 
+  1987], а также ее гибкость и наглядность.<br>
+  Специальные языки представления знаний в сетях фреймов FRL (Frame Representation 
+  Language) [Байдун, Бунин, 1990], KRL (Knowledge Representation Language) [Уотермен, 
+  1989], фреймовая &quot;оболочка&quot; Kappa [Стрельников, Борисов, 1997] и другие 
+  программные средства позволяют эффективно строить промышленные ЭС. Широко известны 
+  такие фрейм-ориентированные экспертные системы, как ANALYST, МОДИС, TRISTAN, 
+  ALTERID [Ковригин, Перфильев, 1988; Николов, 1988; Sisodia, Warkentin, 1992].</p>
+<p align="justify">&nbsp;</p>
+<blockquote> 
+  <table border="0" cellpadding="0" cellspacing="0">
+    <tr> 
+      <td><a href="003.htm" target="_self" onClick="MM_nbGroup('down','group1','Back','',1)" onMouseOver="MM_nbGroup('over','Back','','',1)" onMouseOut="MM_nbGroup('out')"><img src="img/Back.gif" alt="" name="Back" width="73" height="22" border="0" onload=""></a></td>
+      <td><a href="main04.htm" target="_self" onClick="MM_nbGroup('down','group1','Menu','',1)" onMouseOver="MM_nbGroup('over','Menu','','',1)" onMouseOut="MM_nbGroup('out')"><img src="img/Menu.gif" alt="" name="Menu" width="73" height="22" border="0" onload=""></a></td>
+      <td><a href="005.htm" target="_self" onClick="MM_nbGroup('down','group1','For','',1)" onMouseOver="MM_nbGroup('over','For','','',1)" onMouseOut="MM_nbGroup('out')"><img src="img/For.gif" alt="" name="For" width="73" height="22" border="0" onload=""></a></td>
+    </tr>
+  </table>
+  <p align="justify">&nbsp;</p>
+</blockquote>
+</body>
+</html>

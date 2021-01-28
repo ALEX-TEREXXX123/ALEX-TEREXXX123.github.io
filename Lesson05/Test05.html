@@ -1,0 +1,130 @@
+<html>
+<head>
+<title> Экспертные системы. Тестовые задания </title>
+<meta http-equiv="Content-Type" content="text/html; charset=windows-1251">
+<SCRIPT language=JavaScript>
+<!--
+da=0;da1=0
+function wda(){
+da++
+if ((da==1200)&&(da1!=1)){
+da=0; da1=1;
+alert("Ваше время истекло. Результаты теста - в конце страницы.")
+w()
+document.location.href="#down"}
+else setTimeout("wda()",1000)
+}
+wda()
+
+br="\n"
+if (navigator.appVersion.lastIndexOf('Win')!=-1) br="\r\n"
+function w(){
+da1=1;
+N=10;
+u0=new Array();		res="4312313342"
+u2=new Array();
+tr=N;
+k=0;
+oce=0;
+oce1=1;
+un=""
+re=1;
+ for (var i=1; i<=N;i++){ u0[i]=-1;
+   for (var j=0; j<4;j++){if (eval("document.f1.i"+i+"["+j+"].checked==true")) u0[i]=j+1;}
+      if (u0[i]!=res.charAt(i-1)){tr--;k++;u2[k]=i;}
+       }
+ 
+ oce=100*tr/N; 
+ if (k>0){un="Неверные ответы на вопросы:"+br;for (i=1;i<k;i++){un=un+" "+u2[i]+",";if(Math.round(i/30)*30==i) un=un+br}; un=un+" "+u2[k]+"."}
+ if (tr>2) oce1=2;
+ if (tr>4) oce1=3;
+ if (tr>6) oce1=4;
+ if (tr>8) oce1=5;
+ document.f2.t2.value="Оценка: "+oce1+"."+br+"Правильных ответов "+tr+" из "+N+". "+br+un;
+ document.f1.btn.disabled = true;
+}
+
+//-->
+</SCRIPT>
+<META content="MSHTML 6.00.2800.1106" name=GENERATOR></head>
+
+<body bgcolor="#FFCC99">
+<div align="center">
+<H2>Тестовые задания по теме №5</H2>
+<font color="000000" size="+1">
+</div>
+
+<form name=f1>
+      <BR>
+      Время выполнения - 20 мин. 
+      <OL><BR>
+        <LI> Назовите три основных аспекта непосредственного извлечения знаний "из" памяти эксперта?
+          <br><INPUT type=radio value=1 name=i1> а) психологический, лингвистический, статический;
+          <br><INPUT type=radio value=2 name=i1> б) гносеологический, психологический, контролируемый;
+          <br><INPUT type=radio value=3 name=i1> в) лингвистический, гносеологический, педагогический;
+          <br><INPUT type=radio value=4 name=i1> г) психологический, лингвистический, гносеологический;
+<br><br>
+          <br><LI> Ведущий аспект извлечения знаний является
+          <br><INPUT type=radio value=1 name=i2> а) лингвистический;
+          <br><INPUT type=radio value=2 name=i2> б) гносеологический;
+          <br><INPUT type=radio value=3 name=i2> в) психологический;
+          <br><INPUT type=radio value=4 name=i2> г) динамический;
+<br><br>
+          <br><LI> Выберите слои лингвистических проблем:
+          <br><INPUT type=radio value=1 name=i3> а) «общий код», понятийная структура, словарь пользователя;
+          <br><INPUT type=radio value=2 name=i3> б) контактный слой, процедурный слой, когнитивный слой;
+          <br><INPUT type=radio value=3 name=i3> в) семантическая репрезентативность поля знаний, концептуальная модель;
+          <br><INPUT type=radio value=4 name=i3> г) когнитивный слой, динамический слой, независимый слой;
+<br><br>
+          <br><LI> Психологические проблемы, возникающие при извлечении знаний:
+          <br><INPUT type=radio value=1 name=i4> а) «общий код», понятийная структура, словарь пользователя;
+          <br><INPUT type=radio value=2 name=i4> б) контактный слой, процедурный слой, когнитивный слой;
+          <br><INPUT type=radio value=3 name=i4> в) семантическая репрезентативность поля знаний, концептуальная модель;
+          <br><INPUT type=radio value=4 name=i4> г) когнитивный слой, динамический слой, независимый слой;
+<br><br>
+          <br><LI> Выберите параметр процедурного слоя:
+          <br><INPUT type=radio value=1 name=i5> а) пол, возраст и личность;
+          <br><INPUT type=radio value=2 name=i5> б) мотивация, темперамент;
+          <br><INPUT type=radio value=3 name=i5> в) ситуация общения, оборудование;
+          <br><INPUT type=radio value=4 name=i5> г) темп и стиль, учет невербальных компонентов общения, методы;
+<br><br>
+          <br><LI> 	Значения параметров пола и возраста  влияют ли  на эффективность контакта?
+          <br><INPUT type=radio value=1 name=i6> а) да, влияет, но не являются критическими;
+          <br><INPUT type=radio value=2 name=i6> б) да, влияет, являются критическими;
+          <br><INPUT type=radio value=3 name=i6> в) влияет лишь возраст;
+          <br><INPUT type=radio value=4 name=i6> г) влияет лишь пол;
+<br><br>
+          <br><LI> Под личностью обычно понимается:
+          <br><INPUT type=radio value=1 name=i7> а) характерные черты человека;
+          <br><INPUT type=radio value=2 name=i7> б) система нормативных   прав человека, определяющая  его сущность;
+          <br><INPUT type=radio value=3 name=i7> в) устойчивая система психологических черт, характеризующая индивидуальность человека;
+          <br><INPUT type=radio value=4 name=i7> г) сочетание значений параметров: пол, возраст, темперамент, мотивация;
+<br><br>
+          <br><LI> Четыре классических типа темперамента
+          <br><INPUT type=radio value=1 name=i8> а) сангвиник, холерик, меланхолик, математик;
+          <br><INPUT type=radio value=2 name=i8> б) холерик, сангвиник, флегматик, прагматик;
+          <br><INPUT type=radio value=3 name=i8> в) холерик, сангвиник, меланхолик, флегматик;
+          <br><INPUT type=radio value=4 name=i8> г) холерик, дальтоник, меланхолик, флегматик;
+<br><br>
+          <br><LI> Ситуация общения определяется следующими компонентами:
+          <br><INPUT type=radio value=1 name=i9> а) место проведения сеансов;
+          <br><INPUT type=radio value=2 name=i9> б) продолжительность проведения сеансов;
+          <br><INPUT type=radio value=3 name=i9> в) время проведения сеансов;
+          <br><INPUT type=radio value=4 name=i9> г) все ответы верны;
+<br><br>
+          <br><LI> Методы практического извлечения знаний делятся на:
+          <br><INPUT type=radio value=1 name=i10> а) активные, пассивные;
+          <br><INPUT type=radio value=2 name=i10> б) коммуникативные, текстологические;
+          <br><INPUT type=radio value=3 name=i10> в) индивидуальные, групповые;
+          <br><INPUT type=radio value=4 name=i10> г) штурмовые, ролевые;
+<br><br>
+      </LI></OL>
+<center>
+<INPUT TYPE=button name=btn VALUE="Показать результат" onClick="javascript:w()">
+</form>
+<br>
+<form name=f2>
+<Textarea name=t2 rows=8 cols=40 readonly> Результат тестирования будет здесь. </Textarea>
+</form>
+</body>
+</html>
