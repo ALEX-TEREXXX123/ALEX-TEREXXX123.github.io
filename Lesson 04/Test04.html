@@ -1,0 +1,130 @@
+<html>
+<head>
+<title> Экспертные системы. Тестовые задания </title>
+<meta http-equiv="Content-Type" content="text/html; charset=windows-1251">
+<SCRIPT language=JavaScript>
+<!--
+da=0;da1=0
+function wda(){
+da++
+if ((da==1200)&&(da1!=1)){
+da=0; da1=1;
+alert("Ваше время истекло. Результаты теста - в конце страницы.")
+w()
+document.location.href="#down"}
+else setTimeout("wda()",1000)
+}
+wda()
+
+br="\n"
+if (navigator.appVersion.lastIndexOf('Win')!=-1) br="\r\n"
+function w(){
+da1=1;
+N=10;
+u0=new Array();		res="4312331143"
+u2=new Array();
+tr=N;
+k=0;
+oce=0;
+oce1=1;
+un=""
+re=1;
+ for (var i=1; i<=N;i++){ u0[i]=-1;
+   for (var j=0; j<4;j++){if (eval("document.f1.i"+i+"["+j+"].checked==true")) u0[i]=j+1;}
+      if (u0[i]!=res.charAt(i-1)){tr--;k++;u2[k]=i;}
+       }
+ 
+ oce=100*tr/N; 
+ if (k>0){un="Неверные ответы на вопросы:"+br;for (i=1;i<k;i++){un=un+" "+u2[i]+",";if(Math.round(i/30)*30==i) un=un+br}; un=un+" "+u2[k]+"."}
+ if (tr>2) oce1=2;
+ if (tr>4) oce1=3;
+ if (tr>6) oce1=4;
+ if (tr>8) oce1=5;
+ document.f2.t2.value="Оценка: "+oce1+"."+br+"Правильных ответов "+tr+" из "+N+". "+br+un;
+ document.f1.btn.disabled = true;
+}
+
+//-->
+</SCRIPT>
+<META content="MSHTML 6.00.2800.1106" name=GENERATOR></head>
+
+<body bgcolor="#FFCC99">
+<div align="center">
+<H2>Тестовые задания по теме №4</H2>
+<font color="000000" size="+1">
+</div>
+
+<form name=f1>
+      <BR>
+      Время выполнения - 20 мин. 
+      <OL><BR>
+        <LI> Классы  «модели представления знаний»?
+          <br><INPUT type=radio value=1 name=i1> а) продукционные модели;
+          <br><INPUT type=radio value=2 name=i1> б) семантические сети;
+          <br><INPUT type=radio value=3 name=i1> в) фреймы, формальные логические модели;
+          <br><INPUT type=radio value=4 name=i1> г) все ответы верны;
+<br><br>
+          <br><LI> Классы представлений знаний можно разбить на группы:
+          <br><INPUT type=radio value=1 name=i2> а) модульные, графические;
+          <br><INPUT type=radio value=2 name=i2> б) сетевые, семантические;
+          <br><INPUT type=radio value=3 name=i2> в) модульные, сетевые;
+          <br><INPUT type=radio value=4 name=i2> г) все ответы верны;
+<br><br>
+          <br><LI> Дать определение  понятию «семантика»:
+          <br><INPUT type=radio value=1 name=i3> а) наука, определяющая смысл знаков;
+          <br><INPUT type=radio value=2 name=i3> б) наука, определяющая  смысл слов;
+          <br><INPUT type=radio value=3 name=i3> в) наука, изучающая  построения предложения;
+          <br><INPUT type=radio value=4 name=i3> г) модель представления знаний в виде предложений типа «Если (условие), то (действие)»;
+<br><br>
+          <br><LI> Какие языки оперируют отдельными (не связанными) элементами знаний, будь то правила или аксиомы предметной области?
+          <br><INPUT type=radio value=1 name=i4> а) графические;
+          <br><INPUT type=radio value=2 name=i4> б) модульные;
+          <br><INPUT type=radio value=3 name=i4> в) сетевые;
+          <br><INPUT type=radio value=4 name=i4> г) символьные;
+<br><br>
+          <br><LI> Какие языки предоставляют возможность связывать элементы или фрагменты знаний через отношения в семантические сети или сети фреймов?
+          <br><INPUT type=radio value=1 name=i5> а) символьные;
+          <br><INPUT type=radio value=2 name=i5> б) модульные;
+          <br><INPUT type=radio value=3 name=i5> в) сетевые;
+          <br><INPUT type=radio value=4 name=i5> г) графические;
+<br><br>
+          <br><LI> 	Что такое «Данные»?
+          <br><INPUT type=radio value=1 name=i6> а) это ориентированный граф, вершины которого — понятия, а дуги — отношения между ними;
+          <br><INPUT type=radio value=2 name=i6> б) это фрагмент сети, соответствующего некоторой подсети, отражающей поставленный запрос к базе;
+          <br><INPUT type=radio value=3 name=i6> в) это исходные факты, хранящиеся в базе фактов, на основании которых запускается машина вывода или интерпретатор правил;
+          <br><INPUT type=radio value=4 name=i6> г) предикат 1-го порядка, предметная область или задача, которой описывается в виде набора аксиом;
+<br><br>
+          <br><LI> «Семантическая сеть» — это…
+          <br><INPUT type=radio value=1 name=i7> а) это ориентированный граф, вершины которого — понятия, а дуги — отношения между ними;
+          <br><INPUT type=radio value=2 name=i7> б) это наука, устанавливающая отношения между символами и объектами, которые они обозначают;
+          <br><INPUT type=radio value=3 name=i7> в) это абстрактный образ для представления стереотипа объекта, понятия или ситуации;
+          <br><INPUT type=radio value=4 name=i7> г) это сеть, в котором знания представлены в виде предложений типа «Если (условие), то (действие)»;
+<br><br>
+          <br><LI> По количеству типов отношений семантические сети бывают:
+          <br><INPUT type=radio value=1 name=i8> а) однородные, неоднородные;
+          <br><INPUT type=radio value=2 name=i8> б) бинарные, N-арные;
+          <br><INPUT type=radio value=3 name=i8> в) количественные, логические;
+          <br><INPUT type=radio value=4 name=i8> г) пространственные, временные;
+<br><br>
+          <br><LI> Какие модели представления знаний практически не используются?
+          <br><INPUT type=radio value=1 name=i9> а) продукционные модели;
+          <br><INPUT type=radio value=2 name=i9> б) семантические сети;
+          <br><INPUT type=radio value=3 name=i9> в) фреймы;
+          <br><INPUT type=radio value=4 name=i9> г) формальные логические модели;
+<br><br>
+          <br><LI> Дайте определение  понятию «Фрейм»?
+          <br><INPUT type=radio value=1 name=i10> а) это ориентированный граф, вершины которого — понятия, а дуги — отношения между ними;
+          <br><INPUT type=radio value=2 name=i10> б) исходные факты, хранящиеся в базе фактов, на основании которых запускается машина вывода или интерпретатор правил;
+          <br><INPUT type=radio value=3 name=i10> в) это абстрактный образ для представления стереотипа объекта, понятия или ситуации;
+          <br><INPUT type=radio value=4 name=i10> г) таблица, содержащая данные о слотах, их значений и способах их обработки;
+<br><br>
+      </LI></OL>
+<center>
+<INPUT TYPE=button name=btn VALUE="Показать результат" onClick="javascript:w()">
+</form>
+<br>
+<form name=f2>
+<Textarea name=t2 rows=8 cols=40 readonly> Результат тестирования будет здесь. </Textarea>
+</form>
+</body>
+</html>
