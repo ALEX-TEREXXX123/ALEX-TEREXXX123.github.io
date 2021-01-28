@@ -1,0 +1,103 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN">
+<html>
+<head>
+<title>Untitled Document</title>
+<meta http-equiv="Content-Type" content="text/html; charset=windows-1251">
+<script language="JavaScript" type="text/JavaScript">
+<!--
+function MM_preloadImages() { //v3.0
+  var d=document; if(d.images){ if(!d.MM_p) d.MM_p=new Array();
+    var i,j=d.MM_p.length,a=MM_preloadImages.arguments; for(i=0; i<a.length; i++)
+    if (a[i].indexOf("#")!=0){ d.MM_p[j]=new Image; d.MM_p[j++].src=a[i];}}
+}
+
+function MM_findObj(n, d) { //v4.01
+  var p,i,x;  if(!d) d=document; if((p=n.indexOf("?"))>0&&parent.frames.length) {
+    d=parent.frames[n.substring(p+1)].document; n=n.substring(0,p);}
+  if(!(x=d[n])&&d.all) x=d.all[n]; for (i=0;!x&&i<d.forms.length;i++) x=d.forms[i][n];
+  for(i=0;!x&&d.layers&&i<d.layers.length;i++) x=MM_findObj(n,d.layers[i].document);
+  if(!x && d.getElementById) x=d.getElementById(n); return x;
+}
+
+function MM_nbGroup(event, grpName) { //v6.0
+  var i,img,nbArr,args=MM_nbGroup.arguments;
+  if (event == "init" && args.length > 2) {
+    if ((img = MM_findObj(args[2])) != null && !img.MM_init) {
+      img.MM_init = true; img.MM_up = args[3]; img.MM_dn = img.src;
+      if ((nbArr = document[grpName]) == null) nbArr = document[grpName] = new Array();
+      nbArr[nbArr.length] = img;
+      for (i=4; i < args.length-1; i+=2) if ((img = MM_findObj(args[i])) != null) {
+        if (!img.MM_up) img.MM_up = img.src;
+        img.src = img.MM_dn = args[i+1];
+        nbArr[nbArr.length] = img;
+    } }
+  } else if (event == "over") {
+    document.MM_nbOver = nbArr = new Array();
+    for (i=1; i < args.length-1; i+=3) if ((img = MM_findObj(args[i])) != null) {
+      if (!img.MM_up) img.MM_up = img.src;
+      img.src = (img.MM_dn && args[i+2]) ? args[i+2] : ((args[i+1])? args[i+1] : img.MM_up);
+      nbArr[nbArr.length] = img;
+    }
+  } else if (event == "out" ) {
+    for (i=0; i < document.MM_nbOver.length; i++) {
+      img = document.MM_nbOver[i]; img.src = (img.MM_dn) ? img.MM_dn : img.MM_up; }
+  } else if (event == "down") {
+    nbArr = document[grpName];
+    if (nbArr)
+      for (i=0; i < nbArr.length; i++) { img=nbArr[i]; img.src = img.MM_up; img.MM_dn = 0; }
+    document[grpName] = nbArr = new Array();
+    for (i=2; i < args.length-1; i+=2) if ((img = MM_findObj(args[i])) != null) {
+      if (!img.MM_up) img.MM_up = img.src;
+      img.src = img.MM_dn = (args[i+1])? args[i+1] : img.MM_up;
+      nbArr[nbArr.length] = img;
+  } }
+}
+//-->
+</script>
+</head>
+
+<body bgcolor="#FF6666">
+<div align="center">
+  <p><em><strong><font size="5">Лабораторные работы</font></strong></em></p>
+  <table border="0" cellpadding="0" cellspacing="0">
+    <tr> 
+      <td width="280"> <a href="LabWorks/LW01/main01.htm" target="mainFrame" onClick="MM_nbGroup('down','group1','LabWork01','',1)" onMouseOver="MM_nbGroup('over','LabWork01','','',1)" onMouseOut="MM_nbGroup('out')"><img src="img_/LW01.png" alt="" name="LabWork01" width="280" height="35" border="0" onload=""></a></td>
+    </tr>
+    <tr> 
+      <td><a href="LabWorks/LW02/main02.htm" target="mainFrame" onClick="MM_nbGroup('down','group1','LabWork02','',1)" onMouseOver="MM_nbGroup('over','LabWork02','','',1)" onMouseOut="MM_nbGroup('out')"><img src="img_/LW02.png" alt="" name="LabWork02" width="280" height="35" border="0" onload=""></a></td>
+    </tr>
+    <tr> 
+      <td><a href="LabWorks/LW03/main03.htm" target="mainFrame" onClick="MM_nbGroup('down','group1','LabWork03','',1)" onMouseOver="MM_nbGroup('over','LabWork03','','',1)" onMouseOut="MM_nbGroup('out')"><img src="img_/LW03.png" alt="" name="LabWork03" width="280" height="35" border="0" onload=""></a></td>
+    </tr>
+    <tr> 
+      <td><a href="LabWorks/LW04/main04.htm" target="mainFrame" onClick="MM_nbGroup('down','group1','LabWork04','',1)" onMouseOver="MM_nbGroup('over','LabWork04','','',1)" onMouseOut="MM_nbGroup('out')"><img src="img_/LW04.png" alt="" name="LabWork04" width="280" height="35" border="0" onload=""></a></td>
+    </tr>
+    <tr> 
+      <td><a href="LabWorks/LW05/main05.htm" target="mainFrame" onClick="MM_nbGroup('down','group1','LabWork05','',1)" onMouseOver="MM_nbGroup('over','LabWork05','','',1)" onMouseOut="MM_nbGroup('out')"><img src="img_/LW05.png" alt="" name="LabWork05" width="280" height="35" border="0" onload=""></a></td>
+    </tr>
+    <tr> 
+      <td><a href="LabWorks/LW06/main06.htm" target="mainFrame" onClick="MM_nbGroup('down','group1','LabWork06','',1)" onMouseOver="MM_nbGroup('over','LabWork06','','',1)" onMouseOut="MM_nbGroup('out')"><img src="img_/LW06.png" alt="" name="LabWork06" width="280" height="35" border="0" onload=""></a></td>
+    </tr>
+    <tr> 
+      <td><a href="LabWorks/LW07/main07.htm" target="mainFrame" onClick="MM_nbGroup('down','group1','LabWork07','',1)" onMouseOver="MM_nbGroup('over','LabWork07','','',1)" onMouseOut="MM_nbGroup('out')"><img src="img_/LW07.png" alt="" name="LabWork07" width="280" height="35" border="0" onload=""></a></td>
+    </tr>
+    <tr> 
+      <td><a href="LabWorks/LW08/main08.htm" target="mainFrame" onClick="MM_nbGroup('down','group1','LabWork08','',1)" onMouseOver="MM_nbGroup('over','LabWork08','','',1)" onMouseOut="MM_nbGroup('out')"><img src="img_/LW08.png" alt="" name="LabWork08" width="280" height="35" border="0" onload=""></a></td>
+    </tr>
+    <tr> 
+      <td><a href="LabWorks/LW09/main09.htm" target="mainFrame" onClick="MM_nbGroup('down','group1','LabWork09','',1)" onMouseOver="MM_nbGroup('over','LabWork09','','',1)" onMouseOut="MM_nbGroup('out')"><img src="img_/LW09.png" alt="" name="LabWork09" width="280" height="35" border="0" onload=""></a></td>
+    </tr>
+    <tr> 
+      <td><a href="LabWorks/LW10/main10.htm" target="mainFrame" onClick="MM_nbGroup('down','group1','LabWork10','',1)" onMouseOver="MM_nbGroup('over','LabWork10','','',1)" onMouseOut="MM_nbGroup('out')"><img src="img_/LW10.png" alt="" name="LabWork10" width="280" height="35" border="0" onload=""></a></td>
+    </tr>
+    <tr> 
+      <td><a href="LabWorks/LW11/main11.htm" target="mainFrame" onClick="MM_nbGroup('down','group1','LabWork11','',1)" onMouseOver="MM_nbGroup('over','LabWork11','','',1)" onMouseOut="MM_nbGroup('out')"><img src="img_/LW11.png" alt="" name="LabWork11" width="280" height="35" border="0" onload=""></a></td>
+    </tr>
+    <tr> 
+      <td><a href="LabWorks/LW12/main12.htm" target="mainFrame" onClick="MM_nbGroup('down','group1','LabWork12','',1)" onMouseOver="MM_nbGroup('over','LabWork12','','',1)" onMouseOut="MM_nbGroup('out')"><img src="img_/LW12.png" alt="" name="LabWork12" width="280" height="35" border="0" onload=""></a></td>
+    </tr>
+  </table>
+  <p>&nbsp;</p>
+</div>
+</body>
+</html>

@@ -1,0 +1,280 @@
+<html>
+<head>
+<title> Экспертные системы. Тестовые задания </title>
+<meta http-equiv="Content-Type" content="text/html; charset=windows-1251">
+<SCRIPT language=JavaScript>
+<!--
+da=0;da1=0
+function wda(){
+da++
+if ((da==3600)&&(da1!=1)){
+da=0; da1=1;
+alert("Ваше время истекло. Результаты теста - в конце страницы.")
+w()
+document.location.href="#down"}
+else setTimeout("wda()",1000)
+}
+wda()
+
+br="\n"
+if (navigator.appVersion.lastIndexOf('Win')!=-1) br="\r\n"
+function w(){
+da1=1;
+N=35;
+u0=new Array();
+u2=new Array();     res="13231323141243211424124122432112232";
+tr=N;
+k=0;
+oce=0;
+oce1=1;
+un=""
+re=1;
+ for (var i=1; i<=N;i++){ u0[i]=-1;
+   for (var j=0; j<4;j++){if (eval("document.f1.i"+i+"["+j+"].checked==true")) u0[i]=j+1;}
+      if ((5-u0[i])!=res.charAt(i-1)){tr--;k++;u2[k]=i;}
+       }
+ 
+ oce=100*tr/N; 
+ if (k>0){un="Неверные ответы на вопросы:"+br;for (i=1;i<k;i++){un=un+" "+u2[i]+",";if(Math.round(i/30)*30==i) un=un+br}; un=un+" "+u2[k]+"."}
+ if (tr>16) oce1=2;
+ if (tr>20) oce1=3;
+ if (tr>25) oce1=4;
+ if (tr>30) oce1=5;
+ document.f2.t2.value="Оценка: "+oce1+"."+br+"Правильных ответов "+tr+" из "+N+". "+br+un;
+ document.f1.btn.disabled = true;
+}
+
+//-->
+</SCRIPT>
+<META content="MSHTML 6.00.2800.1106" name=GENERATOR></head>
+
+<body bgcolor="#FFCC99">
+<div align="center">
+<H2>Итоговый тест</H2>
+<font color="000000" size="+1">
+</div>
+
+<form name=f1>
+      <BR>
+      Время выполнения - 1 час. 
+      <OL><BR>
+        <LI> Основная задача чего является непрерывная интерпретация данных в реальном масштабе времени и сигнализация о выходе тех или иных параметров за допустимые пределы?
+          <br><INPUT type=radio value=1 name=i1> а) планирования;
+          <br><INPUT type=radio value=2 name=i1> б) обработки;
+          <br><INPUT type=radio value=3 name=i1> в) проектирования;
+          <br><INPUT type=radio value=4 name=i1> г) мониторинга;
+<br><br>
+          <br><LI> Какие ЭС интерпретируют ситуацию, которая меняется с некоторым фиксированным интервалом времени?
+          <br><INPUT type=radio value=1 name=i2> а) Динамические ЭС;
+          <br><INPUT type=radio value=2 name=i2> б) Квазидинамические ЭС;
+          <br><INPUT type=radio value=3 name=i2> в) Автономные ЭС;
+          <br><INPUT type=radio value=4 name=i2> г) Гибридные ЭС;
+<br><br>
+          <br><LI> Что означает термин Управление?
+          <br><INPUT type=radio value=1 name=i3> а) это совокупность процедур, обеспечивающая принимающего решения индивидуума необходимой информацией и рекомендациями, облегчающими процесс принятия решения;
+          <br><INPUT type=radio value=2 name=i3> б) использование компьютера для обучения какой-то дисциплине или предмету;
+          <br><INPUT type=radio value=3 name=i3> в) функция организованной системы, поддерживающая определенный режим деятельности;
+          <br><INPUT type=radio value=4 name=i3> г) непрерывная интерпретация данных в реальном масштабе времени и сигнализация о выходе тех или иных параметров за допустимые пределы;
+<br><br>                                        
+          <br><LI> Что представляет собой процесс Формирование знаний?
+          <br><INPUT type=radio value=1 name=i4> а) процесс соотнесения объекта с некоторым классом объектов и/или обнаружение неисправности в некоторой системе;
+          <br><INPUT type=radio value=2 name=i4> б) процесс анализа данных и выявления скрытых закономерностей с использованием специального математического аппарата и программных средств;
+          <br><INPUT type=radio value=3 name=i4> в) процесс взаимодействия аналитика с источником знаний, в результате которого становится явным процесс рассуждений специалиста при принятии решения и структура его представлений о предметной области ;
+          <br><INPUT type=radio value=4 name=i4> г) процесс заполнения базы знаний экспертом с использованием специализированных программных средств;
+<br><br>
+          <br><LI> Выделяют три основные стратегии проведения стадии получения знаний при разработке ЭС. Какая не входит в данный список?
+          <br><INPUT type=radio value=1 name=i5> а) с использованием ЭВМ при наличии подходящего программного инструментария — приобретение знаний;
+          <br><INPUT type=radio value=2 name=i5> б) с использованием программ обучения при наличии репрезентативной (т. е. достаточно представительной) выборки примеров принятия решений в предметной области и соответствующих пакетов прикладных программ —- формирование знаний;
+          <br><INPUT type=radio value=3 name=i5> в) без использования вычислительной техники путем непосредственного контакта инженера по знаниям и источника знаний (будь то эксперт, специальная литература или другие источники) — извлечение знаний;
+          <br><INPUT type=radio value=4 name=i5> г) без использования программ обучения при наличии репрезентативной (т. е. достаточно представительной) выборки примеров принятия решений в предметной области и соответствующих пакетов прикладных программ — формирование знаний;
+<br><br>
+          <br><LI> 	Что не входит в основные направления исследований инженерии знаний?
+          <br><INPUT type=radio value=1 name=i6> а) получение знаний;
+          <br><INPUT type=radio value=2 name=i6> б) обработка знаний;
+          <br><INPUT type=radio value=3 name=i6> в) структурирование;
+          <br><INPUT type=radio value=4 name=i6> г) представление знаний;
+<br><br>                                        
+          <br><LI> Дайте определение понятию   «словарь пользователя»?
+          <br><INPUT type=radio value=1 name=i7> а) специальный код и понятийная структура, направленные на создание адекватной базы знаний;
+          <br><INPUT type=radio value=2 name=i7> б) общий код и понятийная структура, направленные на определенный  уровень  людей;
+          <br><INPUT type=radio value=3 name=i7> в) общий код и понятийная структура, направленные на создание адекватной базы знаний;
+          <br><INPUT type=radio value=4 name=i7> г) специальный язык предметной области;
+<br><br>
+          <br><LI> Гносеологический аспект — это…
+          <br><INPUT type=radio value=1 name=i8> а) повторение полученного знания;
+          <br><INPUT type=radio value=2 name=i8> б) получение нового научного знания;
+          <br><INPUT type=radio value=3 name=i8> в) наука о природе;
+          <br><INPUT type=radio value=4 name=i8> г) получение нового знания и отбрасывание ненужных информаций;
+<br><br>
+          <br><LI> Укажите правильную последовательность этапов получения нового знания:
+          <br><INPUT type=radio value=1 name=i9> а) построение модели, описание и обобщение фактов, установление связей, объяснение и предсказание явлений;
+          <br><INPUT type=radio value=2 name=i9> б) объяснение и предсказание явлений, установление связей, построение модели, описание и обобщение фактов;
+          <br><INPUT type=radio value=3 name=i9> в) выявление каких-либо этапов получения нового знания нет;
+          <br><INPUT type=radio value=4 name=i9> г) описание и обобщение фактов, установление связей, построение модели, объяснение и предсказание явлений;
+<br><br>                                       
+          <br><LI> По количеству типов отношений семантические сети бывают:
+          <br><INPUT type=radio value=1 name=i10> а) однородные, неоднородные;
+          <br><INPUT type=radio value=2 name=i10> б) бинарные, N-арные;
+          <br><INPUT type=radio value=3 name=i10> в) количественные, логические;
+          <br><INPUT type=radio value=4 name=i10> г) пространственные, временные;
+<br><br>
+          <br><LI> Какие модели представления знаний практически не используются?
+          <br><INPUT type=radio value=1 name=i11> а) продукционные модели;
+          <br><INPUT type=radio value=2 name=i11> б) семантические сети;
+          <br><INPUT type=radio value=3 name=i11> в) фреймы;
+          <br><INPUT type=radio value=4 name=i11> г) формальные логические модели;
+<br><br>
+          <br><LI> Дайте определение  понятию «Фрейм»?
+          <br><INPUT type=radio value=1 name=i12> а) это ориентированный граф, вершины которого — понятия, а дуги — отношения между ними;
+          <br><INPUT type=radio value=2 name=i12> б) исходные факты, хранящиеся в базе фактов, на основании которых запускается машина вывода или интерпретатор правил;
+          <br><INPUT type=radio value=3 name=i12> в) это абстрактный образ для представления стереотипа объекта, понятия или ситуации;
+          <br><INPUT type=radio value=4 name=i12> г) таблица, содержащая данные о слотах, их значений и способах их обработки;
+<br><br>
+         <br><LI> Выберите слои лингвистических проблем:
+          <br><INPUT type=radio value=1 name=i13> а) «общий код», понятийная структура, словарь пользователя;
+          <br><INPUT type=radio value=2 name=i13> б) контактный слой, процедурный слой, когнитивный слой;
+          <br><INPUT type=radio value=3 name=i13> в) семантическая репрезентативность поля знаний, концептуальная модель;
+          <br><INPUT type=radio value=4 name=i13> г) когнитивный слой, динамический слой, независимый слой;
+<br><br>
+          <br><LI> Психологические проблемы, возникающие при извлечении знаний:
+          <br><INPUT type=radio value=1 name=i14> а) «общий код», понятийная структура, словарь пользователя;
+          <br><INPUT type=radio value=2 name=i14> б) контактный слой, процедурный слой, когнитивный слой;
+          <br><INPUT type=radio value=3 name=i14> в) семантическая репрезентативность поля знаний, концептуальная модель;
+          <br><INPUT type=radio value=4 name=i14> г) когнитивный слой, динамический слой, независимый слой;
+<br><br>
+          <br><LI> Выберите параметр процедурного слоя:
+          <br><INPUT type=radio value=1 name=i15> а) пол, возраст и личность;
+          <br><INPUT type=radio value=2 name=i15> б) мотивация, темперамент;
+          <br><INPUT type=radio value=3 name=i15> в) ситуация общения, оборудование;
+          <br><INPUT type=radio value=4 name=i15> г) темп и стиль, учет невербальных компонентов общения, методы;
+<br><br>                                      
+          <br><LI> 	Назовите число фаз цикла управления?
+          <br><INPUT type=radio value=1 name=i16> а) 5;
+          <br><INPUT type=radio value=2 name=i16> б) 4;
+          <br><INPUT type=radio value=3 name=i16> в) 7;
+          <br><INPUT type=radio value=4 name=i16> г) 6;
+<br><br>
+          <br><LI> Оперативные задачи применяются:
+          <br><INPUT type=radio value=1 name=i17> а) при основном производстве;
+          <br><INPUT type=radio value=2 name=i17> б) при вспомогательном производстве;
+          <br><INPUT type=radio value=3 name=i17> в) при материально обеспечении (спонсор);
+          <br><INPUT type=radio value=4 name=i17> г) при технической подготовке производства;
+<br><br>
+          <br><LI> Сфера управления отдела (цеха):
+          <br><INPUT type=radio value=1 name=i18> а) техническая подготовка производства;
+          <br><INPUT type=radio value=2 name=i18> б) вспомогательное производство;
+          <br><INPUT type=radio value=3 name=i18> в) материально-техническое обеспечение;
+          <br><INPUT type=radio value=4 name=i18> г) основное производство;
+<br><br>
+          <br><LI> Какие различают методы опроса?
+          <br><INPUT type=radio value=1 name=i19> а) индивидуальный, заочный, открытый, прямой;
+          <br><INPUT type=radio value=2 name=i19> б) индивидуальный, очный, закрытый, прямой;
+          <br><INPUT type=radio value=3 name=i19> в) индивидуальный, очный, открытый, прямой;
+          <br><INPUT type=radio value=4 name=i19> г) персональный, очный, открытый, прямой;
+<br><br>
+          <br><LI> По типу процедур организации экспертизы различает:
+          <br><INPUT type=radio value=1 name=i20> а) простые и сложные;
+          <br><INPUT type=radio value=2 name=i20> б) открытые и закрытые;
+          <br><INPUT type=radio value=3 name=i20> в) очные и заочные;
+          <br><INPUT type=radio value=4 name=i20> г) прямые и косвенные;
+<br><br>
+          <br><LI> По типу оценок, определяемых экспертами, различают:
+          <br><INPUT type=radio value=1 name=i21> а) очные и заочные;
+          <br><INPUT type=radio value=2 name=i21> б) простые и сложные;
+          <br><INPUT type=radio value=3 name=i21> в) парные и непарные;
+          <br><INPUT type=radio value=4 name=i21> г) качественные и количественные;
+<br><br>
+          <br><LI> Сколько уровней использования ЭВМ по степени автоматизации операций преобразования информации выделяют при описании ЧМП?
+          <br><INPUT type=radio value=1 name=i22> а) один;
+          <br><INPUT type=radio value=2 name=i22> б) два;
+          <br><INPUT type=radio value=3 name=i22> в) три;
+          <br><INPUT type=radio value=4 name=i22> г) четыре;
+<br><br>
+          <br><LI> Что такое СРВ?
+          <br><INPUT type=radio value=1 name=i23> а) система разделения времени;
+          <br><INPUT type=radio value=2 name=i23> б) системы распределения времени;
+          <br><INPUT type=radio value=3 name=i23> в) системы раздвоения времени;
+          <br><INPUT type=radio value=4 name=i23> г) системы раннего времени;
+<br><br>
+          <br><LI> Сколько существует основных СРВ?
+          <br><INPUT type=radio value=1 name=i24> а) 1;
+          <br><INPUT type=radio value=2 name=i24> б) 3;
+          <br><INPUT type=radio value=3 name=i24> в) 10;
+          <br><INPUT type=radio value=4 name=i24> г) 5;
+<br><br> 
+          <br><LI> На кого рассчитано применение оболочек ЭС?
+          <br><INPUT type=radio value=1 name=i25> а) для программистов;
+          <br><INPUT type=radio value=2 name=i25> б) для экспертов;
+          <br><INPUT type=radio value=3 name=i25> в) прикладных специалистов;
+          <br><INPUT type=radio value=4 name=i25> г) для обычных пользователей ПК;
+<br><br>
+          <br><LI> 	Сколько различают типов оболочек ЭС?
+          <br><INPUT type=radio value=1 name=i26> а) 5;
+          <br><INPUT type=radio value=2 name=i26> б) 10;
+          <br><INPUT type=radio value=3 name=i26> в) 13;
+          <br><INPUT type=radio value=4 name=i26> г) 16;
+<br><br>
+          <br><LI> Профессионально ориентированные оболочки ЭС предназначены для:
+          <br><INPUT type=radio value=1 name=i27> а) решения узкого круга задач;
+          <br><INPUT type=radio value=2 name=i27> б) решения большого круга задач;
+          <br><INPUT type=radio value=3 name=i27> в) решения определенной группы задач;
+          <br><INPUT type=radio value=4 name=i27> г) решения одной задачи;
+<br><br>
+          <br><LI> Что происходит на этапе концептуализации?
+          <br><INPUT type=radio value=1 name=i28> а) определение круга задач, которые подлежат решению с помощью ЭС;
+          <br><INPUT type=radio value=2 name=i28> б) выявляются основные понятия, взаимосвязи, методы решения задач;
+          <br><INPUT type=radio value=3 name=i28> в) выбор форды представления знаний, моделирование работы системы;
+          <br><INPUT type=radio value=4 name=i28> г) проводится  подтверждение или опровержение работоспособности ЭС, правильности полученных выводов;
+<br><br>
+          <br><LI> Что происходит на этапе формализации?
+          <br><INPUT type=radio value=1 name=i29> а) определение круга задач, которые подлежат решению с помощью ЭС;
+          <br><INPUT type=radio value=2 name=i29> б) выявляются основные понятия, взаимосвязи, методы решения задач;
+          <br><INPUT type=radio value=3 name=i29> в) выбор форды представления знаний, моделирование работы системы;
+          <br><INPUT type=radio value=4 name=i29> г) проводится  подтверждение или опровержение работоспособности ЭС, правильности полученных выводов;
+<br><br>                                        
+          <br><LI> Что происходит на этапе тестирования?
+          <br><INPUT type=radio value=1 name=i30> а) определение круга задач, которые подлежат решению с помощью ЭС;
+          <br><INPUT type=radio value=2 name=i30> б) выявляются основные понятия, взаимосвязи, методы решения задач;
+          <br><INPUT type=radio value=3 name=i30> в) выбор форды представления знаний, моделирование работы системы;
+          <br><INPUT type=radio value=4 name=i30> г) проводится  подтверждение или опровержение работоспособности ЭС, правильности полученных выводов;
+<br><br>               
+          <br><LI> Двунаправленная ассоциативная память разработана в:
+          <br><INPUT type=radio value=1 name=i31> а) 1988;
+          <br><INPUT type=radio value=2 name=i31> б) 1986;
+		  <br><INPUT type=radio value=3 name=i31> в) 1990;
+		  <br><INPUT type=radio value=4 name=i31> г) 1972;
+<br><br>
+          <br><LI> Весовая матрица в сети ДАП:
+          <br><INPUT type=radio value=1 name=i32> а) квадратная;
+          <br><INPUT type=radio value=2 name=i32> б) не квадратная;
+          <br><INPUT type=radio value=3 name=i32> в) диагональная;
+		  <br><INPUT type=radio value=4 name=i32> г) нулевая;
+		  <br><br>
+          <br><LI> На каком шаге алгоритма обучения сети Кохонена находится расстояние от входа Х до всех нейронов сети:
+          <br><INPUT type=radio value=1 name=i33> а) 2;
+          <br><INPUT type=radio value=2 name=i33> б) 3;
+          <br><INPUT type=radio value=3 name=i33> в) 5;
+		  <br><INPUT type=radio value=4 name=i33> г) 7;
+<br><br>
+          <br><LI> В какой области сеть Кохонена нашло применение :
+          <br><INPUT type=radio value=1 name=i34> а) в задачах математического анализа;;
+          <br><INPUT type=radio value=2 name=i34> б) в программировании;
+          <br><INPUT type=radio value=3 name=i34> в) в задачах финансового анализа;
+          <br><INPUT type=radio value=4 name=i34> г) в экономике;
+<br><br>
+          <br><LI> Аксон-это...отросток нейрона
+          <br><INPUT type=radio value=1 name=i35> а) входной;
+          <br><INPUT type=radio value=2 name=i35> б) выходной;
+		  <br><INPUT type=radio value=3 name=i35> в) центральный;
+		  <br><INPUT type=radio value=4 name=i35> г) Верных утверждений нет
+<br><br>
+      </LI></OL>
+<center>
+<INPUT TYPE=button name=btn VALUE="Показать результат" onClick="javascript:w()">
+</form>
+<br>
+<form name=f2>
+<Textarea name=t2 rows=8 cols=40 readonly> Результат тестирования будет здесь. </Textarea>
+</form>
+</body>
+</html>
